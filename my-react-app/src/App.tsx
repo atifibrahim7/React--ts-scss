@@ -1,22 +1,23 @@
-import './styles/index.scss'
-import BaseModelWrapper from './components/BaseModelPopup/BaseModelWrapper'
-import { useState } from 'react'
-function App() {
+// src/App.tsx
+import React, { useState } from 'react';
+import './App.scss';
+import LoginModal from './components/general/loginModal';
 
-  const [isModalVisible , setIsModalVisible] = useState<boolean>(false)  
+const App: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
 
-  const toggleModal = ()=> {
-    setIsModalVisible(!isModalVisible)
-  }
   return (
-      <div className='container' >
-        <button onClick={toggleModal}>+</button>
-        <h1>My React App</h1>
-        <p>My first React App</p>
-        <BaseModelWrapper isModalVisible={isModalVisible}   onBackdropClick= {toggleModal} />
+    <div className="App">
+      <header className="App-header">
+        <h1>ChitChat</h1>
+        <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, assumenda! Aliquam, eum. Perspiciatis facere qui quae aliquid? Ducimus, est placeat? Culpa consectetur labore natus explicabo pariatur, impedit velit ut laborum! .
+        </p>
+        <button onClick={() => setShowModal(true)}>Login</button>
+      </header>
+      {showModal && <LoginModal onClose={() => setShowModal(false)} />}
+    </div>
+  );
+};
 
-      </div>
-      )
-}
-
-export default App
+export default App;
