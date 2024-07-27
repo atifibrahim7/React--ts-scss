@@ -1,0 +1,10 @@
+// src/styles/_buttons.scss
+.login-button {
+    @include button-style($primary-color, white);
+    margin-bottom: $margin;
+}
+
+.create-account-button {
+    @include button-style(white, $primary-color);
+    border: 1px solid $primary-color;
+}

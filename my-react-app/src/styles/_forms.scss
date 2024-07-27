@@ -1,0 +1,18 @@
+// src/styles/_forms.scss
+input {
+    margin-bottom: $margin;
+    padding: $padding;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: $secondary-color;
+    text-decoration: none;
+    font-size: 14px;
+}

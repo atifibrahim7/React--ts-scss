@@ -1,0 +1,25 @@
+// src/styles/_global.scss
+body {
+    font-family: $font-family;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+button {
+    @include button-style($primary-color, white);
+}
