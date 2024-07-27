@@ -1,6 +1,6 @@
 // src/components/general/LoginModal.tsx
 import React, { useEffect, useRef, useState } from 'react';
-import './LoginModal.scss';
+import './LoginModal.css';
 import { useAuth } from '../../context/authContext';
 import { useNavigate } from 'react-router-dom';
 

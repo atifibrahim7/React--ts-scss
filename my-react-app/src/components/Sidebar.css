@@ -1,0 +1,81 @@
+.sidebar {
+  width: 15%;
+  background-color: #f2f9ff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+.sidebar .sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.sidebar .sidebar-header .sidebar-logo img {
+  width: 50px;
+  height: 50px;
+}
+.sidebar .sidebar-header h2 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+.sidebar .sidebar-menu,
+.sidebar .sidebar-groups,
+.sidebar .sidebar-dms {
+  margin-bottom: 2rem;
+}
+.sidebar .sidebar-menu h3,
+.sidebar .sidebar-groups h3,
+.sidebar .sidebar-dms h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+.sidebar .sidebar-menu ul,
+.sidebar .sidebar-groups ul,
+.sidebar .sidebar-dms ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar .sidebar-menu ul li,
+.sidebar .sidebar-groups ul li,
+.sidebar .sidebar-dms ul li {
+  margin-bottom: 0.5rem;
+}
+.sidebar .sidebar-menu ul li a,
+.sidebar .sidebar-groups ul li a,
+.sidebar .sidebar-dms ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.875rem;
+}
+.sidebar .sidebar-menu ul li a:hover,
+.sidebar .sidebar-groups ul li a:hover,
+.sidebar .sidebar-dms ul li a:hover {
+  text-decoration: underline;
+}
+.sidebar .sidebar-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.sidebar .sidebar-footer .sidebar-add {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.5rem;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+}
+.sidebar .sidebar-footer .sidebar-profile img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}/*# sourceMappingURL=Sidebar.css.map */

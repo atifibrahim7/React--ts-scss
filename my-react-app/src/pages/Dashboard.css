@@ -1,0 +1,13 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+.dashboard .dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .dashboard-content button {
+  display: inline-flex;
+  width: 20%;
+}/*# sourceMappingURL=Dashboard.css.map */

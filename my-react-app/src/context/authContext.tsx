@@ -13,13 +13,14 @@ const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const login = (token: string) => {
     localStorage.setItem('token', token);
-    setIsAuthenticated(true);
-    console.log(isAuthenticated);
+    setIsAuthenticated(true); 
+    console.log(isAuthenticated  +" loged in");
   };
 
   const logout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
+    console.log(isAuthenticated + " loged out");
   };
 
   return (
