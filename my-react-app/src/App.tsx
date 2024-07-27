@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginModal from './components/general/loginModal';
 import ProtectedRoute from './components/protectedRoutes';
-import { AuthProvider } from './context/authContext';
-
-
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/authContext';
 const Home: React.FC = () => (
   <div>
     <h2>Home</h2>
@@ -13,12 +11,24 @@ const Home: React.FC = () => (
   </div>
 );
 
-const Dashboard: React.FC = () => (
-  <div>
-    <h2>Dashboard</h2>
-    <p>This is a protected route.</p>
-  </div>
-);
+const Dashboard: React.FC = () =>{
+  
+     const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+  return (
+    <div>
+      <h2>Dashboard</h2>
+      <p>This is a protected route.</p>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
+
+} 
 
 const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
