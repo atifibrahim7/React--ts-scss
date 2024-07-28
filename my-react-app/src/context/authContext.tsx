@@ -1,41 +1,46 @@
-import  { createContext, useContext, useState, ReactNode, FC } from 'react';
+// src/context/authContext.tsx
+import React, { createContext, useState, useContext } from "react";
 
-interface AuthContextProps {
-  isAuthenticated: boolean;
-  login: (token: string) => void;
+interface AuthContextType {
+  user: any;
+  token: string | null;
+  login: (user: any, token: string) => void;
   logout: () => void;
+  isAuthenticated: boolean;
 }
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [user, setUser] = useState<any>(null);
+  const [token, setToken] = useState<string | null>(null);
 
-  const login = (token: string) => {
-    localStorage.setItem('token', token);
-    setIsAuthenticated(true); 
-    console.log(isAuthenticated  +" loged in");
+  const login = (user: any, token: string) => {
+    setUser(user);
+    setToken(token);
+    console.log("Logged in as", user);
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
-    console.log(isAuthenticated + " loged out");
+    setUser(null);
+    setToken(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, token, login, logout, isAuthenticated: !!user }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-const useAuth = (): AuthContextProps => {
+export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
-
-export { AuthProvider, useAuth };
