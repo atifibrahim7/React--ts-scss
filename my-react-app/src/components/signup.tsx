@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./SignUp.scss";
-
+import "../styles/signup.scss";
 const SignUp: React.FC = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHome, FaChartLine, FaEnvelope, FaEllipsisH } from "react-icons/fa";
 import ProfileModal from "./ProfileModal";
-import "./IconSidebar.scss";
+import "../styles/IconSidebar.css";
 
 const IconSidebar: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -47,9 +47,7 @@ const IconSidebar: React.FC = () => {
           </div>
         </div>
         <div className="icon-bottom">
-          <button className="iconbar-add" onClick={openModal}>
-            
-          </button>
+          <button className="iconbar-add" onClick={openModal}></button>
         </div>
       </div>
       <ProfileModal

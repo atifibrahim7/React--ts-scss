@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import "./Sidebar.scss";
+import "../styles/Sidebar.scss";
 import { FaUsers, FaEnvelope } from "react-icons/fa";
 const Sidebar: React.FC = () => {
   const [isGroupsOpen, setIsGroupsOpen] = useState(false);

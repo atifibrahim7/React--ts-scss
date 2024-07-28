@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import "./ProfileModal.scss";
-
+import "../styles/ProfileModal.css";
 Modal.setAppElement("#root");
 
 interface ProfileModalProps {

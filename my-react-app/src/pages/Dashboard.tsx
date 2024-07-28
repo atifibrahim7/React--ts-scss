@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import { Route, Routes } from "react-router-dom";
 import MainContent from "../components/MainContent";
 import IconSidebar from "../components/IconSidebar";
-import "./Dashboard.scss";
+import "../styles/Dashboard.scss";
 import Chat from "../components/Chat";
 const Dashboard: React.FC = () => {
   return (

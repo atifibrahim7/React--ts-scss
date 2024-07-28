@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 import React from "react";
-import "./MainContent.scss";
+import "../styles/MainContent.scss";
 
 const MainContent: React.FC = () => {
   const { logout } = useAuth();
@@ -10,7 +10,7 @@ const MainContent: React.FC = () => {
   const handleLogout = () => {
     logout();
     navigate("/login");
-  };  
+  };
   return (
     <div className="main-content">
       <h1>Pulse</h1>
