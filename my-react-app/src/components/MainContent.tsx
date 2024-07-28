@@ -16,7 +16,7 @@ const MainContent: React.FC = () => {
       <h1>Pulse</h1>
       <p>Connect, Communicate, Create</p>
       <p>Your journey with pulse begins here!</p>
-      <img src="/path/to/illustration.png" alt="Illustration" />
+      <img src="my-react-app\src\assets\react.svg" alt="ss" />
       <button onClick={handleLogout}>Logout</button> 
     </div>
   );

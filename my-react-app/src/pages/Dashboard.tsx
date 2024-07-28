@@ -12,7 +12,6 @@ const Dashboard: React.FC = () => {
     <div>
         <Header />
     <div className="dashboard">
-
       <IconSidebar />
       <Sidebar />
       <div className="dashboard-content">
