@@ -2,25 +2,30 @@ import React, { useState } from 'react';
 import './App.css';
 import LoginModal from './components/general/loginModal';
 import ProtectedRoute from './components/protectedRoutes';
-import { BrowserRouter as Router, Route, Routes  , useLocation   } from 'react-router-dom';
-import { AuthProvider} from './context/authContext';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { AuthProvider } from './context/authContext';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import Dashboard from './pages/Dashboard';
 import Homepage from './pages/Homepage';
+
+const queryClient = new QueryClient();
 
 const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <AuthProvider>
-      <Router>
-        <AppContent showModal={showModal} setShowModal={setShowModal} />
-      </Router>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Router>
+          <AppContent showModal={showModal} setShowModal={setShowModal} />
+        </Router>
+      </AuthProvider>
+    </QueryClientProvider>
   );
 };
 
 const AppContent: React.FC<{ showModal: boolean; setShowModal: (show: boolean) => void }> = ({ showModal, setShowModal }) => {
-  const location  = useLocation();
+  const location = useLocation();
   const isDashboardRoute = location.pathname === '/dashboard';
 
   return (
@@ -42,6 +47,8 @@ const AppContent: React.FC<{ showModal: boolean; setShowModal: (show: boolean) =
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Homepage />} />
         <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} />
+        <Route path="/dashboard/groups" element={<ProtectedRoute component={Homepage} />} />
+        <Route path="/dashboard/direct-messages" element={<ProtectedRoute component={Homepage} />} />
       </Routes>
     </div>
   );
