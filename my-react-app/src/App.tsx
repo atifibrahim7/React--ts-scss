@@ -13,6 +13,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 import ChatDashboard from "./pages/ChatDashboard";
+// import GroupPage from "./pages/GroupPage";
+// import ChatPage from "./pages/ChatPage";
 
 const queryClient = new QueryClient();
 
@@ -65,7 +67,15 @@ const AppContent: React.FC<{
           element={<ProtectedRoute component={ChatDashboard} />}
         />
         <Route
+          path="/dashboard/groups/:id"
+          element={<ProtectedRoute component={ChatDashboard} />}
+        />
+        <Route
           path="/dashboard/chat"
+          element={<ProtectedRoute component={ChatDashboard} />}
+        />
+        <Route
+          path="/dashboard/chat/:id"
           element={<ProtectedRoute component={ChatDashboard} />}
         />
       </Routes>

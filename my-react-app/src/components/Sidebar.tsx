@@ -3,6 +3,21 @@ import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import "../styles/Sidebar.scss";
 import { FaUsers, FaEnvelope } from "react-icons/fa";
+
+const groups = [
+  { name: "Log Rocket Updates", id: 1 },
+  { name: "Random", id: 2 },
+  { name: "General", id: 3 },
+  { name: "HR", id: 4 },
+];
+
+const directMessages = [
+  { name: "Ashir Manzoor", id: 1 },
+  { name: "Fahad Jalal", id: 2 },
+  { name: "Yashua Parvez", id: 3 },
+  { name: "Aneeq Akber", id: 4 },
+];
+
 const Sidebar: React.FC = () => {
   const [isGroupsOpen, setIsGroupsOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -14,6 +29,7 @@ const Sidebar: React.FC = () => {
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -44,18 +60,13 @@ const Sidebar: React.FC = () => {
             </button>
             {isGroupsOpen && (
               <ul className="dropdown-content">
-                <li>
-                  <Link to="/dashboard/groups">Log Rocket Updates</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/groups">Random</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/groups">General</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/groups">HR</Link>
-                </li>
+                {groups.map((group) => (
+                  <li key={group.id}>
+                    <Link to={`/dashboard/groups/${group.id}`}>
+                      {group.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
@@ -66,18 +77,11 @@ const Sidebar: React.FC = () => {
             </button>
             {isChatOpen && (
               <ul className="dropdown-content">
-                <li>
-                  <Link to="/dashboard/chat">Ashir Manzoor</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/chat">Fahad Jalal</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/chat">Yashua Parvez</Link>
-                </li>
-                <li>
-                  <Link to="/dashboard/chat">Aneeq Akber</Link>
-                </li>
+                {directMessages.map((dm) => (
+                  <li key={dm.id}>
+                    <Link to={`/dashboard/chat/${dm.id}`}>{dm.name}</Link>
+                  </li>
+                ))}
               </ul>
             )}
           </li>

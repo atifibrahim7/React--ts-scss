@@ -1,5 +1,19 @@
 import React, { useState } from "react";
 import "../styles/Chat.scss";
+import {
+  FaBold,
+  FaItalic,
+  FaLink,
+  FaListUl,
+  FaListOl,
+  FaCode,
+  FaPlus,
+  FaSmile,
+  FaVideo,
+  FaMicrophone,
+  FaPenSquare,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 // Assuming you have the user's profile picture URL
 const user = {
@@ -53,14 +67,31 @@ const Chat: React.FC = () => {
         ))}
       </div>
       <div className="input-area">
+        <div className="toolbar">
+          <FaBold />
+          <FaItalic />
+          <FaLink />
+          <FaListUl />
+          <FaListOl />
+          <FaCode />
+        </div>
         <input
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Type your message"
-          onKeyDown={handleKeyPress} // Add this line
+          placeholder="Message Log Rocket Updates"
+          onKeyDown={handleKeyPress}
         />
-        <button onClick={sendMessage}>Send</button>
+        <div className="input-icons">
+          <FaPlus />
+          <FaSmile />
+          <FaVideo />
+          <FaMicrophone />
+          <FaPenSquare />
+        </div>
+        <button onClick={sendMessage}>
+          <FaPaperPlane />
+        </button>
       </div>
     </div>
   );

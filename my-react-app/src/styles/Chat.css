@@ -61,4 +61,72 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 5%;
+  margin-right: 30px;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4f8;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+.input-area .toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.input-area .toolbar svg {
+  cursor: pointer;
+  color: #555;
+}
+.input-area .toolbar svg:hover {
+  color: #000;
+}
+.input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.input-area input:focus {
+  outline: none;
+}
+.input-area .input-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.input-area .input-icons svg {
+  cursor: pointer;
+  color: #555;
+}
+.input-area .input-icons svg:hover {
+  color: #000;
+}
+.input-area button {
+  background-color: none;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-area button svg {
+  color: white;
+}
+.input-area button:hover {
+  background-color: #0056b3;
 }/*# sourceMappingURL=Chat.css.map */
