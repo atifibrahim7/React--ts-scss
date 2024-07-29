@@ -45,16 +45,16 @@ const Sidebar: React.FC = () => {
             {isGroupsOpen && (
               <ul className="dropdown-content">
                 <li>
-                  <Link to="/group/log-rocket-updates">Log Rocket Updates</Link>
+                  <Link to="/dashboard/groups">Log Rocket Updates</Link>
                 </li>
                 <li>
-                  <Link to="/group/random">Random</Link>
+                  <Link to="/dashboard/groups">Random</Link>
                 </li>
                 <li>
-                  <Link to="/group/general">General</Link>
+                  <Link to="/dashboard/groups">General</Link>
                 </li>
                 <li>
-                  <Link to="/group/hr">HR</Link>
+                  <Link to="/dashboard/groups">HR</Link>
                 </li>
               </ul>
             )}
@@ -67,16 +67,16 @@ const Sidebar: React.FC = () => {
             {isChatOpen && (
               <ul className="dropdown-content">
                 <li>
-                  <Link to="/dm/ashir-manzoor">Ashir Manzoor</Link>
+                  <Link to="/dashboard/chat">Ashir Manzoor</Link>
                 </li>
                 <li>
-                  <Link to="/dm/fahad-jalal">Fahad Jalal</Link>
+                  <Link to="/dashboard/chat">Fahad Jalal</Link>
                 </li>
                 <li>
-                  <Link to="/dm/yashua-parvez">Yashua Parvez</Link>
+                  <Link to="/dashboard/chat">Yashua Parvez</Link>
                 </li>
                 <li>
-                  <Link to="/dm/anee-akeber">Aneeq Akber</Link>
+                  <Link to="/dashboard/chat">Aneeq Akber</Link>
                 </li>
               </ul>
             )}
