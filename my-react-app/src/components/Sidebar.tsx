@@ -28,7 +28,7 @@ const Sidebar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/dashboard/direct-messages">
+            <Link to="/dashboard/chat">
               <FaEnvelope />
               Direct Messages
             </Link>

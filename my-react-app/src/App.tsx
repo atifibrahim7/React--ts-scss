@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import LoginModal from "./components/general/loginModal";
 import ProtectedRoute from "./components/protectedRoutes";
+import DashboardChat from "./pages/ChatDashboard";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,6 +13,8 @@ import { AuthProvider } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
+import ChatDashboard from "./pages/ChatDashboard";
+import Chat from "./components/Chat";
 
 const queryClient = new QueryClient();
 
@@ -34,11 +37,12 @@ const AppContent: React.FC<{
   setShowModal: (show: boolean) => void;
 }> = ({ showModal, setShowModal }) => {
   const location = useLocation();
-  const isDashboardRoute = location.pathname === "/dashboard";
+  const isDashboardRoute =
+    location.pathname === "/login" || location.pathname === "/";
 
   return (
     <div className="App">
-      {!isDashboardRoute && (
+      {isDashboardRoute && (
         <header className="App-header">
           <h1>ChitChat</h1>
           <p>
@@ -55,16 +59,16 @@ const AppContent: React.FC<{
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Homepage />} />
         <Route
-          path="/dashboard/*"
+          path="/dashboard"
           element={<ProtectedRoute component={Dashboard} />}
         />
         <Route
           path="/dashboard/groups"
-          element={<ProtectedRoute component={Dashboard} />}
+          element={<ProtectedRoute component={ChatDashboard} />}
         />
         <Route
           path="/dashboard/chat"
-          element={<ProtectedRoute component={Dashboard} />}
+          element={<ProtectedRoute component={ChatDashboard} />}
         />
       </Routes>
     </div>

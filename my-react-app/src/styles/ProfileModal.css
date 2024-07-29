@@ -19,6 +19,20 @@
   flex-direction: column;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
+.profile-modal .profile-modal-content .top {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-modal .profile-modal-content .top .close-button {
+  margin: 20px;
+}
+.profile-modal .profile-modal-content .line {
+  border-bottom: 1px solid #8dbff0;
+}
+
+.close-button:hover {
+  color: #f50000;
+}
 
 .close-button {
   background: none;
@@ -32,13 +46,18 @@
 }
 
 .profile-header {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.pfp {
+  display: flex;
+  justify-content: center;
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 .profile-info {

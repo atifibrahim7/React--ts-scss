@@ -54,7 +54,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
           ✖
         </button>
         <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Email Address / Phone Number"
@@ -73,7 +73,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
             <a href="#">Forgot password</a>
           </div>
           <button type="submit" className="login-button" disabled={isLoading}>
-            {isLoading ? "Logging in..." : "Login"} // Display loading state
+            {isLoading ? "Logging in..." : "Login"}
           </button>
         </form>
         {isError && (

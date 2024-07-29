@@ -3,7 +3,7 @@ body {
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  color: #3b3b3b;
+  color: #06334D;
 }
 
 .App {
@@ -21,7 +21,7 @@ body {
 }
 
 button {
-  background-color: #003366;
+  background-color: #97B4CC;
   color: white;
   padding: 10px;
   border: none;
@@ -31,7 +31,7 @@ button {
 }
 
 .login-button {
-  background-color: #003366;
+  background-color: #97B4CC;
   color: white;
   padding: 10px;
   border: none;
@@ -43,13 +43,13 @@ button {
 
 .create-account-button {
   background-color: white;
-  color: #003366;
+  color: #97B4CC;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  border: 1px solid #003366;
+  border: 1px solid #97B4CC;
 }
 
 input {
@@ -65,7 +65,7 @@ input {
 }
 
 .forgot-password a {
-  color: #007bff;
+  color: #06334D;
   text-decoration: none;
   font-size: 14px;
 }/*# sourceMappingURL=main.css.map */

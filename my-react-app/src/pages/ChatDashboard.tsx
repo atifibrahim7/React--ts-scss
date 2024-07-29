@@ -1,10 +1,10 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import MainContent from "../components/MainContent";
 import IconSidebar from "../components/IconSidebar";
+import Chat from "../components/Chat";
 import "../styles/Dashboard.scss";
-const Dashboard: React.FC = () => {
+const ChatDashboard: React.FC = () => {
   return (
     <div>
       <Header />
@@ -12,16 +12,11 @@ const Dashboard: React.FC = () => {
         <IconSidebar />
         <Sidebar />
         <div className="dashboard-content">
-          <MainContent />
-          {/* <Routes>
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/" element={<MainContent />} />
-            <Route path="/groups" element={<Chat />} />
-          </Routes> */}
+          <Chat />
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default ChatDashboard;

@@ -1,5 +1,5 @@
 .login-button {
-  background-color: #003366;
+  background-color: #97B4CC;
   color: white;
   padding: 10px;
   border: none;
@@ -11,13 +11,13 @@
 
 .create-account-button {
   background-color: white;
-  color: #003366;
+  color: #97B4CC;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  border: 1px solid #003366;
+  border: 1px solid #97B4CC;
 }
 
 input {
@@ -33,7 +33,7 @@ input {
 }
 
 .forgot-password a {
-  color: #007bff;
+  color: #06334D;
   text-decoration: none;
   font-size: 14px;
 }
@@ -53,26 +53,38 @@ input {
 .modal {
   background: #e8f0ff;
   padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
-  width: 30%;
+  width: 22%;
+}
+.modal .form input {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #97B4CC;
+  background-color: #e8f0ff;
+  width: 90%;
+}
+.modal .form button {
+  background-color: #06334D;
+  font-size: smaller;
 }
 
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
-  border: none;
   font-size: 20px;
   cursor: pointer;
+  border: 1px solid #ad0101;
 }
 
 h2 {
+  margin-top: 10px;
   margin-bottom: 20px;
-  color: #3b3b3b;
+  color: #06334D;
+  font-size: 35px;
 }
 
 form {
@@ -81,6 +93,12 @@ form {
 }
 
 .or-separator {
-  margin: 20px 0;
+  margin: 10px;
   color: #7a7a7a;
+}
+
+.create-account-button {
+  border-radius: 8px;
+  font-size: smaller;
+  background-color: #e8f0ff;
 }/*# sourceMappingURL=LoginModal.css.map */

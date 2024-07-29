@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import "../styles/ProfileModal.css";
+import Picture from "../assets/hello.jpg";
 Modal.setAppElement("#root");
 
 interface ProfileModalProps {
@@ -29,20 +30,27 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
       overlayClassName="profile-modal-overlay"
     >
       <div className="profile-modal-content">
-        <button className="close-button" onClick={onRequestClose}>
-          X
-        </button>
+        <div className="top">
+          <div>
+            <h3>Profile</h3>
+          </div>
+          <div>
+            <button className="close-button" onClick={onRequestClose}>
+              X
+            </button>
+          </div>
+        </div>
+        <div className="line"></div>
         <div className="profile-header">
-          <img
-            src="https://randomuser.me/api/portraits"
-            alt="Profile"
-            className="profile-pic"
-          />
-          <button className="edit-button">Edit</button>
-
-          <h2>{user.name}</h2>
-          <p>@{user.username}</p>
-          <p>{user.status}</p>
+          <div className="pfp">
+            <img src={Picture} alt="Profile" className="profile-pic" />
+          </div>
+          <div>
+            <button className="edit-button">Edit</button>
+            <h2>{user.name}</h2>
+            <p>@{user.username}</p>
+            <p>{user.status}</p>
+          </div>
         </div>
         <div className="profile-info">
           <h3>Email Address</h3>

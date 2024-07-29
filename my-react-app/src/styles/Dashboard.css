@@ -1,6 +1,6 @@
 .dashboard {
   display: flex;
-  height: 100vh;
+  height: 92vh;
 }
 .dashboard .dashboard-content {
   flex: 1;

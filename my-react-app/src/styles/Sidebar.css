@@ -1,0 +1,118 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 1px; /* Adjust the bottom padding as needed */
+  border-bottom: 1px solid #e9ecef;
+}
+.sidebar .sidebar-header h2 {
+  font-size: 18px;
+  color: #333;
+}
+.sidebar .sidebar-links {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 1px 20px;
+}
+.sidebar .sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar .sidebar-links ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+.sidebar .sidebar-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+.sidebar .sidebar-links ul li a:hover {
+  color: #007bff;
+}
+.sidebar .sidebar-menu,
+.sidebar .sidebar-groups,
+.sidebar .sidebar-dms {
+  padding: 10px 20px;
+}
+.sidebar .sidebar-menu ul,
+.sidebar .sidebar-groups ul,
+.sidebar .sidebar-dms ul {
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+.sidebar .sidebar-menu ul li,
+.sidebar .sidebar-groups ul li,
+.sidebar .sidebar-dms ul li {
+  margin: 10px 0;
+}
+.sidebar .sidebar-menu ul li a,
+.sidebar .sidebar-groups ul li a,
+.sidebar .sidebar-dms ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+.sidebar .sidebar-menu ul li a:hover,
+.sidebar .sidebar-groups ul li a:hover,
+.sidebar .sidebar-dms ul li a:hover {
+  color: #007bff;
+}
+.sidebar .sidebar-menu h3,
+.sidebar .sidebar-groups h3,
+.sidebar .sidebar-dms h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+.sidebar .sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 1px;
+}
+
+.sidebar .dropdown-btn {
+  background: none;
+  font-size: small;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar .dropdown-content {
+  list-style-type: none;
+  font-size: x-small;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .dropdown-content li {
+  padding: 0.5rem 1rem;
+}
+
+.sidebar .dropdown-content li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar .dropdown-content li a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Sidebar.css.map */
