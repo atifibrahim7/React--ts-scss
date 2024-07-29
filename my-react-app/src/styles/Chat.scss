@@ -33,18 +33,22 @@
         justify-content: space-between;
         margin-bottom: 5px;
 
+
         .user-name {
           font-weight: bold;
+          font-size: small;
         }
 
         .message-time {
           color: #888;
+          margin: 0px 0px 0px 10px;
           font-size: 0.8em;
         }
       }
 
       .message-text {
         word-wrap: break-word;
+        text-align: left;
       }
     }
   }

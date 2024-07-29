@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { SocketProvider } from "./context/socketContext";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 import ChatDashboard from "./pages/ChatDashboard";
@@ -24,9 +25,11 @@ const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <Router>
-          <AppContent showModal={showModal} setShowModal={setShowModal} />
-        </Router>
+        <SocketProvider>
+          <Router>
+            <AppContent showModal={showModal} setShowModal={setShowModal} />
+          </Router>
+        </SocketProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

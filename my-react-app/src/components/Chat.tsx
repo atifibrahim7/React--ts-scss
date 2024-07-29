@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+// client/src/components/Chat.tsx
+import React, { useState, useEffect } from "react";
+import { useSocket } from "../context/socketContext";
 import "../styles/Chat.scss";
+import { useLocation } from "react-router-dom";
 import {
   FaBold,
   FaItalic,
@@ -15,33 +18,55 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 
-// Assuming you have the user's profile picture URL
 const user = {
   name: "Muhammad Salman",
-  profilePicture: "path-to-profile-picture.jpg", // Update this with the actual path
+  profilePicture: "../assets/hello.png", // Update this with the actual path
 };
 
 const Chat: React.FC = () => {
+  const socket = useSocket();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<{ text: string; time: string }[]>(
     []
   );
+  const location = useLocation();
+
+  useEffect(() => {
+    if (socket) {
+      socket.on("receiveMessage", (message: { text: string; time: string }) => {
+        console.log("Message received:", message); // Log received messages
+        setMessages((prevMessages) => [...prevMessages, message]);
+      });
+    }
+
+    return () => {
+      if (socket) {
+        socket.off("receiveMessage");
+      }
+    };
+  }, [socket]);
+  useEffect(() => {
+    setMessages([]);
+  }, [location]);
 
   const sendMessage = () => {
-    if (message.trim()) {
+    if (message.trim() && socket) {
       const now = new Date();
       const timeString = `${now.getHours()}:${now
         .getMinutes()
         .toString()
         .padStart(2, "0")}`;
-      setMessages([...messages, { text: message, time: timeString }]);
+      const newMessage = { text: message, time: timeString };
+      console.log("Sending message:", newMessage); // Log messages being sent
+      socket.emit("sendMessage", newMessage);
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
       setMessage("");
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      e.preventDefault(); // Prevent the default behavior of the Enter key (e.g., form submission)
+      e.preventDefault();
       sendMessage();
     }
   };
