@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import LoginModal from "./components/general/loginModal";
 import ProtectedRoute from "./components/protectedRoutes";
-import DashboardChat from "./pages/ChatDashboard";
 import {
   BrowserRouter as Router,
   Route,
@@ -14,7 +13,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
 import ChatDashboard from "./pages/ChatDashboard";
-import Chat from "./components/Chat";
 
 const queryClient = new QueryClient();
 
