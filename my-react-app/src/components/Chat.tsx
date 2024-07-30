@@ -45,6 +45,7 @@ const Chat: React.FC = () => {
       }
     };
   }, [socket]);
+
   useEffect(() => {
     setMessages([]);
   }, [location]);

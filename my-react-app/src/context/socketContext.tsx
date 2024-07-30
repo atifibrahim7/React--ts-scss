@@ -14,7 +14,7 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({
   const socket = useRef<Socket | null>(null);
 
   useEffect(() => {
-    socket.current = io("http://localhost:5173"); // Replace with your server URL
+    socket.current = io("http://localhost:3001"); // Ensure this matches your server port
 
     return () => {
       if (socket.current) {
